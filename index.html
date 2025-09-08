@@ -82,14 +82,24 @@
 
     footer { margin: 34px 0 20px; color: var(--muted); font-size: 13px; text-align: center; }
 
-    /* Print as PDF */
-    @media print {
-      header.sticky { position: static; background: none; border: 0; }
-      .btn, .cta, .avatar-card { display: none !important; }
-      body { background: #fff; color: #111; }
-      .card { border-color: #ddd; box-shadow: none; }
-      a { color: #0645ad; text-decoration: underline; }
-    }
+    /* Download CV PDF */
+.download-cv {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #4CAF50; /* Green */
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.download-cv:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
   </style>
 </head>
 <body>
@@ -125,8 +135,9 @@
         </div>
         <div class="cta">
           <a class="btn primary" href="#contact">Contact Me</a>
-          <a href="OWOLABI PRAISE BUKOLAMI CV.pdf" download>
-  <button>Download CV</button>
+          <a href="OWOLABI PRAISE BUKOLAMI CV.pdf" download class="download-cv">
+  Download CV
+</a>
 </a>
           <a class="btn" href="#projects">View Projects</a>
         </div>
