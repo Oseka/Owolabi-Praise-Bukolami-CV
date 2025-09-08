@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Owolabi Bukolami Praise • CV & Portfolio</title>
+  <meta name="description" content="One-page CV & portfolio of Owolabi Praise – Computer Science student, aspiring Cloud Architect, AI & Cybersecurity enthusiast." />
+  <style>
+    :root {
+      --bg: #0b1220;
+      --card: #111a2c;
+      --muted: #93a4c3;
+      --text: #eaf1ff;
+      --accent: #5aa9ff;
+      --accent-2: #7ef0c1;
+      --ring: rgba(122, 170, 255, 0.35);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: linear-gradient(180deg, var(--bg), #0f1730 50%, var(--bg));
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Layout */
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    header.sticky {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(11, 18, 32, 0.85);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    nav .brand { font-weight: 800; letter-spacing: .3px; }
+    nav .brand span { color: var(--accent-2); }
+    nav .links { display: flex; flex-wrap: wrap; gap: 10px; }
+    nav .links a { padding: 8px 10px; border-radius: 10px; }
+    nav .links a:hover { background: rgba(255,255,255,0.06); text-decoration: none; }
+
+    /* Hero */
+    .hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: 24px; align-items: center; padding: 40px 0 12px; }
+    .hero h1 { font-size: clamp(28px, 4.5vw, 46px); line-height: 1.15; margin: 0 0 10px; }
+    .tagline { color: var(--muted); margin-bottom: 18px; }
+    .chipbar { display: flex; gap: 10px; flex-wrap: wrap; margin: 14px 0 22px; }
+    .chip { border: 1px solid rgba(255,255,255,0.12); color: var(--text); padding: 6px 10px; border-radius: 999px; font-size: 13px; }
+    .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn { padding: 10px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.12); color: var(--text); background: transparent; cursor: pointer; }
+    .btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #0a1020; border: none; font-weight: 700; }
+    .btn:hover { filter: brightness(1.05); }
+    .avatar-card { background: radial-gradient(120% 120% at 100% 0%, rgba(122, 170, 255, 0.12), rgba(126, 240, 193, 0.07) 40%, transparent 70%), var(--card); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 18px; display: grid; place-items: center; min-height: 220px; box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+    }
+    .avatar {
+      width: 120px; height: 120px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-2)); display: grid; place-items: center; color: #0a1020; font-size: 40px; font-weight: 900; box-shadow: 0 8px 30px var(--ring);
+    }
+
+    /* Sections */
+    section { margin: 26px 0; }
+    .section-title { font-size: 20px; letter-spacing: .5px; margin: 0 0 12px; opacity: .95; }
+    .grid { display: grid; gap: 14px; }
+    .grid.cols-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .grid.cols-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    @media (max-width: 780px) {
+      .hero { grid-template-columns: 1fr; }
+      .grid.cols-2, .grid.cols-3 { grid-template-columns: 1fr; }
+    }
+
+    .card { background: var(--card); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 16px; box-shadow: 0 6px 24px rgba(0,0,0,0.2); }
+    .muted { color: var(--muted); }
+    .list { margin: 8px 0 0 18px; }
+    .list li { margin: 6px 0; }
+    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size: 12px; background: rgba(255,255,255,0.06); padding: 2px 6px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.12); }
+
+    footer { margin: 34px 0 20px; color: var(--muted); font-size: 13px; text-align: center; }
+
+    /* Print as PDF */
+    @media print {
+      header.sticky { position: static; background: none; border: 0; }
+      .btn, .cta, .avatar-card { display: none !important; }
+      body { background: #fff; color: #111; }
+      .card { border-color: #ddd; box-shadow: none; }
+      a { color: #0645ad; text-decoration: underline; }
+    }
+  </style>
+</head>
+<body>
+  <header class="sticky">
+    <div class="container">
+      <nav>
+        <div class="brand">Owolabi <span>Bukolami Praise</span></div>
+        <div class="links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div>
+        <h1>Owolabi Bukolami Praise</h1>
+        <p class="tagline">Aspiring <strong>Cloud Architect</strong> • AI & Cybersecurity Enthusiast • Computer Science @ Ajayi Crowther University</p>
+        <div class="chipbar">
+          <div class="chip">Python</div>
+          <div class="chip">React</div>
+          <div class="chip">Flask / Django</div>
+          <div class="chip">MySQL</div>
+          <div class="chip">Cloud (AWS/Azure basics)</div>
+          <div class="chip">Cybersecurity Fundamentals</div>
+        </div>
+        <div class="cta">
+          <a class="btn primary" href="#contact">Contact Me</a>
+          <button class="btn" onclick="window.print()">Print / Save PDF</button>
+          <a class="btn" href="#projects">View Projects</a>
+        </div>
+        <p class="muted" style="margin-top:10px;">📍 Kano State, Nigeria · 📧 <a href="mailto:your.email@example.com">your.email@example.com</a> · 🔗 <a href="https://www.linkedin.com/in/your-link" target="_blank" rel="noreferrer">LinkedIn</a> · 💻 <a href="https://github.com/your-github" target="_blank" rel="noreferrer">GitHub</a></p>
+      </div>
+      <div class="avatar-card">
+        <div class="avatar" aria-hidden="true">OP</div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <h2 class="section-title">About</h2>
+      <div class="card">
+        <p>Motivated and detail-oriented Computer Science student with interests in <strong>cloud computing</strong>, <strong>artificial intelligence</strong>, <strong>data science</strong>, and <strong>cybersecurity</strong>. Experienced building web apps (React, Python, MySQL), designing awareness campaigns, and coordinating student tech events. Career goal: become a <strong>Cloud Architect</strong> building secure, scalable systems that solve real problems.</p>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Technical</h3>
+          <ul class="list">
+            <li>Python; JavaScript (React); HTML, CSS</li>
+            <li>Databases: SQL (MySQL)</li>
+            <li>Frameworks: Flask / Django; Tailwind CSS</li>
+            <li>Version Control: Git & GitHub</li>
+            <li>Cloud: AWS/Azure fundamentals</li>
+            <li>Data: Pandas, Matplotlib (beginner)</li>
+            <li>ML: scikit-learn basics</li>
+            <li>Cybersecurity fundamentals</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Soft Skills</h3>
+          <ul class="list">
+            <li>Leadership; Project Coordination</li>
+            <li>Teamwork & Collaboration</li>
+            <li>Communication & Public Speaking</li>
+            <li>Problem-Solving; Critical Thinking</li>
+            <li>Adaptability; Time Management</li>
+            <li>Creativity & Innovation</li>
+            <li>Networking & Relationship Building</li>
+            <li>Attention to Detail</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <div class="grid cols-2">
+        <article class="card">
+          <h3>Career Navigation Assistant (CNA)</h3>
+          <p class="muted">React • Python (Flask/Django) • MySQL • O*NET Data</p>
+          <ul class="list">
+            <li>Web platform helping ACU Computer Science students explore career paths.</li>
+            <li>Features: Career Matchmaker, Industry Explorer, Mentor Marketplace, Course Guide, Job Board.</li>
+            <li>Prototype ML to recommend careers based on grades and interests.</li>
+          </ul>
+          <p><a href="#" aria-label="CNA GitHub link">GitHub / Demo (add link)</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Phishing Awareness Campaign</h3>
+          <p class="muted">Cybersecurity • Canva • Student Outreach</p>
+          <ul class="list">
+            <li>Designed and delivered a campus-wide campaign focused on phishing prevention.</li>
+            <li>Created educational flyers and digital materials to promote safe online practices.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Password Strength Checker</h3>
+          <p class="muted">Python • Security • Beginner-friendly</p>
+          <ul class="list">
+            <li>Cli/web tool that scores password strength and provides actionable tips.</li>
+            <li>Planned extension: breach check via API and Flask UI; deploy to cloud.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Cloud Resume (Planned)</h3>
+          <p class="muted">AWS/Azure • Serverless • IaC</p>
+          <ul class="list">
+            <li>Personal resume site deployed serverlessly with CI/CD and analytics.</li>
+            <li>Showcases Infrastructure as Code and cloud observability basics.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Experience / Leadership -->
+    <section id="experience">
+      <h2 class="section-title">Experience & Leadership</h2>
+      <div class="card">
+        <div style="display:flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
+          <div>
+            <strong>General Secretary</strong> — NACOS, ACU Chapter
+            <div class="muted">2025 · Oyo, Nigeria</div>
+          </div>
+          <div class="muted">Student Association Leadership</div>
+        </div>
+        <ul class="list">
+          <li>Coordinated administrative communication, agendas, and documentation for the executive council.</li>
+          <li>Planned and executed events (TechTalk with GDG & Cephas ICT Hub, bootcamps, summits, social events).</li>
+          <li>Supported sponsorship outreach and partnerships to drive student engagement.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <strong>Ajayi Crowther University</strong>
+          <div class="muted">B.Sc. Computer Science · 2021 – 2025</div>
+          <ul class="list">
+            <li>Coursework: AI, Data Structures & Algorithms, Databases, Cloud Computing, Cybersecurity.</li>
+            <li>Active member of NACOS (National Association of Computing Students).</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>Certifications & Training</strong>
+          <ul class="list">
+            <li>Google IT Support Fundamentals (in progress)</li>
+            <li>Google IT Automation with Python (planned)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="card">
+        <p><strong>Email:</strong> <a href="mailto:oseakkowolabi@gmail.com">oseakkowolabi@gmail.com/a> &nbsp;·&nbsp; <strong>Phone:</strong> +234-901-235-3385 / +234-705-149-0600</p>
+        <p><strong>LinkedIn:</strong> <a href="www.linkedin.com/in/praise-bukolami-owolabi-aa95802b1" target="_blank" rel="noreferrer">linkedin.com/in/your-link</a> &nbsp;·&nbsp; <strong>GitHub:</strong> <a href="https://github.com/Oseka" target="_blank" rel="noreferrer">github.com/your-github</a></p>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Owolabi Praise — Built with HTML & CSS · <span class="kbd">Cmd/Ctrl + P</span> to save as PDF
+    </footer>
+  </main>
+
+  <script>
+    // Smooth scroll (native behavior in modern browsers)
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const href = a.getAttribute('href');
+        if (href.length > 1) {
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
